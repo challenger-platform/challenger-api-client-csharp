@@ -36,7 +36,7 @@ bool resp = Challenger.deleteClient();
 # Performance widgets
 ## Web version
 
-Using the Java helper functions provided with Challenger to get widget HTML is as easy as that:
+Using the C# helper functions provided with Challenger to get widget HTML is as easy as that:
 
 ```C#
 using ChallengerPlatform;
