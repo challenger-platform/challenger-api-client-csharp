@@ -123,6 +123,5 @@ try{
 string encryptedData = Challenger.getEncryptedData();
 
 ```
-```
 
 N.B. This function is not accessible for coalitional partners.
