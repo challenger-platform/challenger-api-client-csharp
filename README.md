@@ -44,7 +44,7 @@ Challenger challenger = new Challenger(DOMAIN)
             {
                 ClientId = CLIENT_ID,
                 Key = SECRET_KEY,
-                UseHTTPS = true,s
+                UseHTTPS = true,
             };
 bool resp = Challenger.deleteClient();
 ```
