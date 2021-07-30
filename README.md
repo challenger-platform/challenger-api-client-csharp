@@ -19,12 +19,16 @@ using ChallengerPlatform;
 
 // ... your code ...
 
-Challenger.setServer('{your.challenger.domain}');
-Challenger.setOwnerId('{owner_id}'); // Optional
-Challenger.setClientId('{client_id}');
-Challenger.setKey('{secret_key}');
-Challenger.addParam('multiple', '{multiple}'); // Optional
-bool resp = Challenger.trackEvent('{event}');
+Challenger challenger = new Challenger(DOMAIN)
+            {
+                ClientId = CLIENT_ID,
+                Key = SECRET_KEY,
+                UseHTTPS = true,
+                //OwnerId = owner_id // Optional
+            };
+challenger.addParam("param1", "value1"); // Optional
+challenger.addParam("param2", "value2"); // Optional
+bool resp = Challenger.trackEvent("event");
 ```
 
 ## Delete client example
@@ -36,9 +40,12 @@ using ChallengerPlatform;
 
 // ... your code ...
 
-Challenger.setServer('{your.challenger.domain}');
-Challenger.setClientId('{client_id}');
-Challenger.setKey('{secret_key}');
+Challenger challenger = new Challenger(DOMAIN)
+            {
+                ClientId = CLIENT_ID,
+                Key = SECRET_KEY,
+                UseHTTPS = true,s
+            };
 bool resp = Challenger.deleteClient();
 ```
 
@@ -68,14 +75,18 @@ using ChallengerPlatform;
 
 // ... your code ...
 
-Challenger.setServer('{your.challenger.domain}');
-Challenger.setClientId('{client_id}');
-Challenger.setKey('{secret_key}');
-Challenger.addParam('expiration', '0000-00-00 00:00:00'); // Required
-Challenger.addParam('name', 'John'); // Optional
-Challenger.addParam('surname', 'Smith'); // Optional
-Challenger.addParam('{param1}', '{value1}'); // Optional
-Challenger.addParam('{param2}', '{value2}'); // Optional
+Challenger challenger = new Challenger(DOMAIN)
+            {
+                ClientId = CLIENT_ID,
+                Key = SECRET_KEY,
+                UseHTTPS = true,
+                //OwnerId = owner_id // Optional
+            };
+Challenger.addParam("expiration", "0000-00-00 00:00:00"); // Required
+Challenger.addParam("name", "John"); // Optional
+Challenger.addParam("surname", "Smith"); // Optional
+Challenger.addParam("param1", "value1"); // Optional
+Challenger.addParam("param2", "value2"); // Optional
 
 try{
    string resp = Challenger.getWidgetHtml(); // Return HTML snippet
@@ -102,12 +113,16 @@ using ChallengerPlatform;
 
 // ... your code ...
 
-Challenger.setServer('{your.challenger.domain}');
-Challenger.setClientId('{client_id}');
-Challenger.setKey('{secret_key}');
-Challenger.addParam('expiration', '0000-00-00 00:00:00'); // Required
-Challenger.addParam('{param1}', '{value1}');
-Challenger.addParam('{param2}', '{value2}');
+Challenger challenger = new Challenger(DOMAIN)
+            {
+                ClientId = CLIENT_ID,
+                Key = SECRET_KEY,
+                UseHTTPS = true,
+                //OwnerId = owner_id // Optional
+            };
+Challenger.addParam("expiration", "0000-00-00 00:00:00"); // Required
+Challenger.addParam("param1", "value1"); // Optional
+Challenger.addParam("param2", "value2"); // Optional
 Challenger.addParam('mobile', true); // Pass it to get mobile version of the widget
 
 try{
