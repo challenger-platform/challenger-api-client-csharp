@@ -66,8 +66,6 @@ In examples below:
    - `birthday` (in format 0000-00-00)
  - `value1`, `value2`,  ... - values of optional parameters.
 
-## Web version
-
 Using the C# helper functions provided with Challenger to get widget HTML is as easy as that:
 
 ```C#
@@ -88,55 +86,24 @@ Challenger.addParam("surname", "Smith"); // Optional
 Challenger.addParam("param1", "value1"); // Optional
 Challenger.addParam("param2", "value2"); // Optional
 
+// Option A: Get a widget HTML generated on server
 try{
    string resp = Challenger.getWidgetHtml(); // Return HTML snippet
 }catch(Exception ex){
    // Error happened.
 }
 
-// ...
-
-// For locally drawn widgets `getEncryptedData()` method could be used instead of `getWidgetHtml()`. Please refer:
-// https://github.com/challenger-platform/challenger-widget#get-apiwidgetauthenticateuser for more information
-string encryptedData = Challenger.getEncryptedData();
-
-```
-
-N.B. This function is not accessible for coalitional partners.
-
-## Mobile app version
-
-This code creates an encrypted URL for mobile ready widget. It should be passed to mobile app and opened in WebView.
-
-```C#
-using ChallengerPlatform;
-
-// ... your code ...
-
-Challenger challenger = new Challenger(DOMAIN)
-            {
-                ClientId = CLIENT_ID,
-                Key = SECRET_KEY,
-                UseHTTPS = true,
-                //OwnerId = owner_id // Optional
-            };
-Challenger.addParam("expiration", "0000-00-00 00:00:00"); // Required
-Challenger.addParam("param1", "value1"); // Optional
-Challenger.addParam("param2", "value2"); // Optional
-Challenger.addParam('mobile', true); // Pass it to get mobile version of the widget
-
+// Option B: Get an URL of the widget generated on server 
 try{
    String widgetUrl = Challenger.getWidgetUrl(); // Return HTML snippet
 }catch(Exception ex){
    // Error happened.
 }
 
-// ...
-
+// Option C: Get and encrypted token to authorize the user and draw the widget on client-side
 // For locally drawn widgets `getEncryptedData()` method could be used instead of `getWidgetHtml()`. Please refer:
 // https://github.com/challenger-platform/challenger-widget#get-apiwidgetauthenticateuser for more information
 string encryptedData = Challenger.getEncryptedData();
-
 ```
 
 N.B. This function is not accessible for coalitional partners.
