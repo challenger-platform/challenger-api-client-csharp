@@ -88,14 +88,14 @@ Challenger.addParam("param2", "value2"); // Optional
 
 // Option A: Get a widget HTML generated on server
 try{
-   string resp = Challenger.getWidgetHtml(); // Return HTML snippet
+   string resp = Challenger.getWidgetHtml(); // Returns HTML snippet
 }catch(Exception ex){
    // Error happened.
 }
 
 // Option B: Get an URL of the widget generated on server 
 try{
-   String widgetUrl = Challenger.getWidgetUrl(); // Return HTML snippet
+   String widgetUrl = Challenger.getWidgetUrl(); // Returns URL
 }catch(Exception ex){
    // Error happened.
 }
