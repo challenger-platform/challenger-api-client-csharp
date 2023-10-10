@@ -63,6 +63,7 @@ In examples below:
    - `surname`
    - `email`
    - `phone`
+   - `lang` (2-digit language code. I.e. "en", "es", "lt", "hr")
    - `birthday` (in format 0000-00-00)
  - `value1`, `value2`,  ... - values of optional parameters.
 
@@ -83,6 +84,7 @@ Challenger challenger = new Challenger(DOMAIN)
 Challenger.addParam("expiration", "0000-00-00 00:00:00"); // Required
 Challenger.addParam("name", "John"); // Optional
 Challenger.addParam("surname", "Smith"); // Optional
+Challenger.addParam("lang", "en"); // Optional
 Challenger.addParam("param1", "value1"); // Optional
 Challenger.addParam("param2", "value2"); // Optional
 
